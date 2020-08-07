@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class CanvasView extends View{
     private ArrayList<Line> lines = new ArrayList<Line>();
     private Line aLine;
-    private int currenColor = Color.BLACK;
+    private int currentColor = Color.BLACK;
     public Context context;
     public int lineWidth = 10;
     public CanvasView(Context context, AttributeSet attrs) {
@@ -54,7 +54,7 @@ public class CanvasView extends View{
     public boolean onTouchEvent(MotionEvent event){
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                aLine = new Line(currenColor);
+                aLine = new Line(currentColor);
                 lines.add(aLine);
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -70,6 +70,6 @@ public class CanvasView extends View{
         return true;
     }
     public void setColor(int c){
-        currenColor = c;
+        currentColor = c;
     }
 }
