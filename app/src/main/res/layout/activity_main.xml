@@ -7,16 +7,19 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:gravity="center_horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Myview"
+        tools:layout_editor_absoluteX="2dp">
 
         <Button
             android:id="@+id/saveButton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="保存" />
 
         <RadioGroup
@@ -28,46 +31,52 @@
             <RadioButton
                 android:id="@+id/black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="黒"
-                android:checked="true" />
+                android:layout_height="55dp"
+                android:checked="true"
+                android:text="黒" />
 
             <RadioButton
                 android:id="@+id/red"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="赤"
-                android:checked="false" />
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:text="赤" />
 
             <RadioButton
                 android:id="@+id/green"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:checked="false"
-                android:text="緑" />
+                android:text="緑"
+                tools:layout_editor_absoluteX="174dp"
+                tools:layout_editor_absoluteY="18dp" />
+
         </RadioGroup>
 
         <Button
-            style="?android:attr/buttonStyleSmall"
             android:id="@+id/undoButton"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="取り消し" />
 
         <Button
-            style="?android:attr/buttonStyleSmall"
             android:id="@+id/clearButton"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="消去" />
 
 
-        </LinearLayout>
-        <com.example.oekaki.CanvasView
-            android:id="@+id/Myview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </com.example.oekaki.CanvasView>
+    </LinearLayout>
+
+    <com.example.oekaki.CanvasView
+        android:id="@+id/Myview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.example.oekaki.CanvasView>
 
 </LinearLayout>

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -17,17 +19,15 @@ public class MainActivity extends AppCompatActivity {
             canvasView.undo();
         }
     }
-    public class ClearBtnOnclickListner implements View.OnClickListener{
+    public class ClearBtnOnclickListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
             canvasView.clear();
         }
     }
-    public class SaveBtnOnClickListner implements View.OnClickListener{
+    public class SaveBtnOnClickListener implements View.OnClickListener{
         @Override
-        public void onClick(View v){
-
-        }
+        public void onClick(View v){ canvasView.saveFile(); }
     }
     public class ColorBtnOnChangeListener implements RadioGroup.OnCheckedChangeListener {
         @Override
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.colorRadio);
         radioGroup.setOnCheckedChangeListener(new ColorBtnOnChangeListener());
         Button saveButton = (Button) findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new SaveBtnOnClickListner());
+        saveButton.setOnClickListener(new SaveBtnOnClickListener());
         Button clearButton = (Button)findViewById(R.id.clearButton);
-        clearButton.setOnClickListener(new ClearBtnOnclickListner());
+        clearButton.setOnClickListener(new ClearBtnOnclickListener());
         Button undoButton = (Button)findViewById(R.id.undoButton);
         undoButton.setOnClickListener(new UndoBtnOnClickListener());
     }
