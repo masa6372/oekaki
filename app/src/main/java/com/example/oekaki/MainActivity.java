@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public class SaveBtnOnClickListener implements View.OnClickListener{
         @Override
-        public void onClick(View v){ canvasView.saveFile(); }
+        public void onClick(View v){ /*canvasView.saveFile();*/ }
     }
     public class ColorBtnOnChangeListener implements RadioGroup.OnCheckedChangeListener {
         @Override
